@@ -1,0 +1,128 @@
+.stability-meter {
+  background: var(--panel);
+  border: 1px solid var(--grid-border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.meter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.meter-header h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.stability-icon {
+  font-size: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.meter-container {
+  margin-bottom: 20px;
+}
+
+.meter-bar {
+  width: 100%;
+  height: 12px;
+  background: var(--panel-2);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid var(--grid-border);
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease, background-color 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.meter-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.percentage {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.status {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stability-info {
+  padding: 16px;
+  background: var(--panel-2);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.stability-info p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Stability level specific styles */
+.stability-meter[data-stability="100"] .stability-icon {
+  animation: sparkle 1.5s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(5deg); }
+  50% { transform: scale(1.2) rotate(0deg); }
+  75% { transform: scale(1.1) rotate(-5deg); }
+}
+
+.stability-meter[data-stability="0"] .stability-icon {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .stability-meter {
+    padding: 16px;
+  }
+  
+  .meter-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .percentage {
+    font-size: 1.3rem;
+  }
+  
+  .status {
+    font-size: 0.8rem;
+  }
+}

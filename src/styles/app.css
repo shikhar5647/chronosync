@@ -1,0 +1,91 @@
+/* Additional app-specific styles */
+.app-shell {
+  min-height: 100vh;
+  background: radial-gradient(80% 60% at 30% 20%, #0e0f18 0%, var(--bg) 60%);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.content {
+  min-height: calc(100vh - 140px);
+}
+
+.board-wrap {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Loading animation */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .sidebar {
+    order: 2;
+  }
+  
+  .board-wrap {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 10px 16px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .content {
+    padding: 16px;
+  }
+  
+  .board-wrap {
+    min-height: 400px;
+  }
+}

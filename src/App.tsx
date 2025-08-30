@@ -1,15 +1,13 @@
 import React from 'react'
-import { GameProvider, useGame } from '@state/GameContext'
-import TimelineGrid from '@components/TimelineGrid'
-import StabilityMeter from '@components/StabilityMeter'
-import RevealPanel from '@components/RevealPanel'
-import EraIntro from '@components/EraIntro'
-
+import { GameProvider, useGame } from './state/GameContext'
+import TimelineGrid from './components/TimelineGrid'
+import StabilityMeter from './components/StabilityMeter'
+import RevealPanel from './components/RevealPanel'
+import EraIntro from './components/EraIntro'
 
 const GameShell: React.FC = () => {
     const { state, actions } = useGame()
     const { stability, solved, era, puzzleIndex } = state
-
 
     return (
         <div className="app-shell">
@@ -21,10 +19,9 @@ const GameShell: React.FC = () => {
                 </div>
             </header>
 
-
             <main className="content">
                 <aside className="sidebar">
-                    <EraIntro era={era} index={puzzleIndex} />
+                    <EraIntro />
                     <StabilityMeter value={stability} />
                 </aside>
                 <section className="board-wrap">
@@ -33,7 +30,6 @@ const GameShell: React.FC = () => {
                 </section>
             </main>
 
-
             <footer className="footer">
                 <span>v0.1 • Dark Timeline Engine</span>
             </footer>
@@ -41,12 +37,10 @@ const GameShell: React.FC = () => {
     )
 }
 
-
 const App: React.FC = () => (
     <GameProvider>
         <GameShell />
     </GameProvider>
 )
-
 
 export default App

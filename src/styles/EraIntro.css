@@ -1,0 +1,191 @@
+.era-intro {
+  background: var(--panel);
+  border: 1px solid var(--grid-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.era-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.era-title {
+  margin: 0 0 12px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 0 20px currentColor;
+}
+
+.era-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.puzzle-number {
+  background: var(--accent);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.era-description {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.era-narrative {
+  background: var(--panel-2);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  border-left: 4px solid var(--accent-2);
+}
+
+.era-narrative p {
+  margin: 0;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+}
+
+.difficulty-selector {
+  margin-bottom: 24px;
+}
+
+.difficulty-selector h4 {
+  margin: 0 0 16px 0;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.difficulty-btn {
+  background: var(--cell-bg);
+  border: 2px solid var(--grid-border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.difficulty-btn:hover {
+  background: var(--cell-hover);
+  border-color: var(--accent);
+}
+
+.difficulty-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  box-shadow: 0 0 0 2px rgba(124, 92, 255, 0.3);
+}
+
+.era-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat {
+  background: var(--panel-2);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--grid-border);
+}
+
+.stat-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  display: block;
+  color: var(--accent-2);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.era-tips {
+  background: var(--panel-2);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid var(--grid-border);
+}
+
+.era-tips h4 {
+  margin: 0 0 16px 0;
+  color: var(--accent-2);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.era-tips ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.era-tips li {
+  margin-bottom: 8px;
+}
+
+.era-tips li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .era-intro {
+    padding: 20px;
+  }
+  
+  .era-title {
+    font-size: 1.5rem;
+  }
+  
+  .era-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .difficulty-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .difficulty-btn {
+    width: 100%;
+    max-width: 120px;
+  }
+}
